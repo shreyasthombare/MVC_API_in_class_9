@@ -1,0 +1,28 @@
+﻿@model NationalParks.Models.edu_data
+
+<h1>Parks</h1>
+<hr />
+
+@foreach (var item in Model.data)
+{
+<div>
+    <h3>
+        @Html.DisplayFor(modelItem => item.CITY)
+    </h3>
+    <div>
+        @Html.DisplayFor(modelItem => item.ZIP)
+    </div>
+    <a href="@item.url" target="_blank">
+        @Html.DisplayFor(modelItem => item.MAIN)
+    </a>
+    <div>
+        <h5>Directions: </h5>
+        @Html.DisplayFor(modelItem => item.REGION)
+    </div>
+</div>
+<br/>
+}
+
+<script>
+    alertDbSave(@ViewBag.dbSuccessComp);
+</script>
